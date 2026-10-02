@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@utility prose-pink {
+  @apply prose;
+  & > * {
+    --tw-prose-body: var(--color-pink-800);
+    --tw-prose-headings: var(--color-pink-900);
+  }
+}
+
+@utility btn-primary {
+  @apply bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold transition hover:from-yellow-500 hover:to-yellow-700;
+}
+
+/* sekarang baru aturan CSS lainnya */
+:root {
+  --background: #131313;
+  --foreground: #171717;
+
+}
+
+@theme inline {
+  --color-line: rgba(205, 161, 58, 0.24);
+  --color-background: var(--background);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+.max-w-8xl {
+  max-width: 88rem;
+}
+
+body {
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+
+  background-color: var(--background);
+}
+
+.product-specs table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.product-specs {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-specs table {
+  min-width: 720px;
+}
+
+.product-specs th,
+.product-specs td {
+  background-color: transparent;
+  border-color: #2a2a2a;
+  color: #e5e7eb;
+}
+
+.product-specs tbody tr:nth-child(odd) {
+  background-color: rgba(10, 10, 10, 0.7);
+}
+
+.product-specs tbody tr:nth-child(even) {
+  background-color: rgba(18, 18, 18, 0.7);
+}
