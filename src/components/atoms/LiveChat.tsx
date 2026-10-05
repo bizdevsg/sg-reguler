@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 // Nomor WhatsApp dalam format internasional (tanpa +, tanpa 0 di depan).
-const WHATSAPP_NUMBER = "087841013855";
+const WHATSAPP_NUMBER = "6287841013855";
 
 export default function LiveChat() {
     return (
