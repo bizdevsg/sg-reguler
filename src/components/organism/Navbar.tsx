@@ -8,6 +8,8 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import LanguageToggle from "@/components/atoms/LanguageToggle";
 import { useI18n } from "@/i18n/useI18n";
 
+const MAIN_SITE_URL = "https://mini.sg-berjangka.com/";
+
 type MenuLink = { label: string; href: string };
 type MenuGroup = { category: string; children: MenuLink[] };
 type SubMenuItem = { label: string; href: string; subDropdown?: MenuLink[] };
@@ -493,6 +495,14 @@ export default function Navbar() {
                                     </Link>
                                 );
                             })}
+
+                            {/* Back to main website */}
+                            <a
+                                href={MAIN_SITE_URL}
+                                className="inline-flex items-center rounded-md border border-yellow-400 px-3 py-1.5 text-sm text-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors"
+                            >
+                                {t("nav.mainSite")}
+                            </a>
 
                             {/* Language */}
                             <div className="lg:block w-full lg:w-auto mt-1 lg:mt-0 flex items-center gap-3">

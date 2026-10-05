@@ -27,6 +27,7 @@ export const messages: Record<Locale, Messages> = {
 
     "nav.home": "Beranda",
     "nav.about": "Tentang Kami",
+    "nav.mainSite": "Website Utama",
     "nav.products": "Produk",
     "nav.procedures": "Prosedur",
     "nav.news": "Berita",
@@ -649,6 +650,7 @@ export const messages: Record<Locale, Messages> = {
 
     "nav.home": "Home",
     "nav.about": "About Us",
+    "nav.mainSite": "Main Website",
     "nav.products": "Products",
     "nav.procedures": "Procedures",
     "nav.news": "News",
