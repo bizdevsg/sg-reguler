@@ -8,7 +8,7 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import LanguageToggle from "@/components/atoms/LanguageToggle";
 import { useI18n } from "@/i18n/useI18n";
 
-const MAIN_SITE_URL = process.env.NEXT_PUBLIC_MAIN_SITE_URL;
+const MAIN_SITE_URL = process.env.NEXT_PUBLIC_MAIN_SITE_URL ?? "https://sg-berjangka.com/";
 
 type MenuLink = { label: string; href: string };
 type MenuGroup = { category: string; children: MenuLink[] };
