@@ -1,6 +1,10 @@
 ## [Unreleased]
 
 ### Added
+- Menambahkan `.dockerignore` agar dependency lokal, hasil build Next.js, dan riwayat Git tidak dikirim ke konteks build Docker.
+- Menambahkan konfigurasi Docker Compose untuk menjalankan sg-reguler di localhost port 3010 dengan akses portal berita melalui jaringan lokal.
+- Menambahkan `dockerFile` untuk membangun dan menjalankan Next.js standalone dalam container produksi.
+- Menambahkan redirect permanen dari URL lama produk dan wakil pialang ke struktur route baru.
 - Menambahkan halaman katalog kategori JFX dan SPA pada route `/{locale}/product/{kategori}`, dengan daftar produk API, metadata, dan penanganan data kosong atau gagal dimuat.
 - Menambahkan tombol katalog pada section produk halaman utama serta navigasi kembali dari halaman detail, dengan label Indonesia dan Inggris.
 - Menambahkan halaman detail produk pada route `/{locale}/product/{kategori}/{slug}`, dengan deskripsi, gambar, spesifikasi API, metadata, dan tautan dari kartu produk halaman utama.
@@ -10,6 +14,10 @@
 - Menambahkan konfigurasi opsional `WAKIL_PIALANG_API_BASE_URL` untuk sumber data resmi Wakil Pialang dan kantor cabang.
 
 ### Changed
+- Menyesuaikan konfigurasi `.env` lokal untuk domain reguler, mode produksi, origin SG Admin, dan endpoint produksi yang diperlukan.
+- Merapikan `.env` lokal sesuai variabel yang direferensikan proyek dan menghapus konfigurasi lama yang tidak ditemukan penggunaannya, sambil mempertahankan nilai konfigurasi aktif.
+- Melengkapi dan mengelompokkan variabel yang digunakan aplikasi dalam `.env.example` agar konfigurasi deployment dan integrasi lebih mudah ditemukan tanpa menyalin nilai rahasia.
+- Mendokumentasikan konfigurasi produksi minimum serta kebutuhan variabel publik saat build di `.env.example`.
 - Menyesuaikan kartu Wakil Pialang dengan desain berinisial, gradien gelap, aksen emas, dan badge status agar selaras dengan desain yang diminta.
 - Mendesain ulang profil kantor dan daftar Wakil Pialang menjadi panel beraksen emas dan kartu responsif agar identitas, nomor izin, dan status lebih mudah dibaca.
 - Menghapus halaman reguler dan halaman pendukung yang ditambahkan setelah katalog produk, serta memulihkan navigasi dan route produk serta wakil pialang sebelumnya.

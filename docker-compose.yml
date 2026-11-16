@@ -1,0 +1,22 @@
+# sg-reguler diproxy oleh nginx di reguler.sg-berjangka.com.
+services:
+  sg-reguler:
+    image: sg-reguler:latest
+    container_name: sg-reguler
+    build:
+      context: .
+      dockerfile: dockerFile
+      # Akses portal berita melalui jaringan lokal saat build.
+      extra_hosts:
+        - "portalnews.newsmaker.id:192.168.20.24"
+        - "sg-admin.sg-berjangka.com:192.168.20.34"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+    extra_hosts:
+      - "portalnews.newsmaker.id:192.168.20.24"
+      - "sg-admin.sg-berjangka.com:192.168.20.34"
+    ports:
+      - "127.0.0.1:3010:3000"
+    restart: unless-stopped

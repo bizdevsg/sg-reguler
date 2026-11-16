@@ -40,12 +40,12 @@ export const idSolidGoldAppPageContent: SolidGoldAppPageContent = {
         stores: [
           {
             label: "Buka Play Store",
-            href: "https://play.google.com/store/apps/details?id=com.solidgoldberjangka.minimicro&hl=id",
+            href: "https://play.google.com/store/apps/details?id=com.royalassetindo.protrader&pcampaignid=web_share",
             icon: "google-play",
           },
           {
             label: "Buka App Store",
-            href: "https://apps.apple.com/id/app/solid/id6756168987?l=id",
+            href: "https://apps.apple.com/id/app/pro-trader-royalassetindo/id6502900138",
             icon: "apple",
           },
         ],

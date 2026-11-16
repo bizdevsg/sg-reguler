@@ -93,6 +93,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/produk/:path*",
+        destination: "/id/product/:path*",
+        permanent: true,
+      },
+      {
+        source: "/tentang-kami/wakil-pialang",
+        destination: "/id/wakil-pialang-berjangka",
+        permanent: true,
+      },
+      {
         source: "/",
         destination: `/${DEFAULT_LOCALE}`,
         permanent: false,
