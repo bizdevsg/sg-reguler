@@ -8,7 +8,7 @@ export const idHero: AppMessages["hero"] = {
   cta: "Mulai Trading",
   openDemoCta: "Buka Akun Demo",
   demoLoginCta: "Login Demo Account",
-  demoDisclaimer: "*Dapatkan saldo virtual $5,000 untuk latihan tanpa risiko.",
+  demoDisclaimer: "*Dapatkan saldo virtual $10,000 untuk latihan tanpa risiko.",
   visualAlt: "Visual aplikasi trading di ponsel",
   downloadTitle: "Mulai Trading Sekarang",
 };

@@ -14,6 +14,7 @@
 - Menambahkan konfigurasi opsional `WAKIL_PIALANG_API_BASE_URL` untuk sumber data resmi Wakil Pialang dan kantor cabang.
 
 ### Changed
+- Memperbarui informasi saldo virtual akun demo di hero dari $5.000 menjadi $10.000 dalam bahasa Indonesia dan Inggris.
 - Merapikan `.env` lokal dengan menghapus konfigurasi fitur yang tidak digunakan dan Client Area yang dinonaktifkan di proyek ini.
 - Menghapus empat variabel dari `.env` lokal yang hasil konfigurasinya tidak digunakan oleh fitur proyek.
 - Mengabaikan folder `/deploy` di Git agar berkas deployment lokal tidak ikut tercatat dalam repository.

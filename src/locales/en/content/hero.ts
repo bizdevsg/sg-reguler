@@ -8,7 +8,7 @@ export const enHero: AppMessages["hero"] = {
   cta: "Start Trading",
   openDemoCta: "Open Demo Account",
   demoLoginCta: "Login Demo Account",
-  demoDisclaimer: "*Get a $5,000 virtual balance to practice risk-free.",
+  demoDisclaimer: "*Get a $10,000 virtual balance to practice risk-free.",
   visualAlt: "Trading application displayed on a mobile phone",
   downloadTitle: "Start Trading Now",
 };
