@@ -14,6 +14,7 @@
 - Menambahkan konfigurasi opsional `WAKIL_PIALANG_API_BASE_URL` untuk sumber data resmi Wakil Pialang dan kantor cabang.
 
 ### Changed
+- Mengabaikan folder `/deploy` di Git agar berkas deployment lokal tidak ikut tercatat dalam repository.
 - Menyesuaikan konfigurasi `.env` lokal untuk domain reguler, mode produksi, origin SG Admin, dan endpoint produksi yang diperlukan.
 - Merapikan `.env` lokal sesuai variabel yang direferensikan proyek dan menghapus konfigurasi lama yang tidak ditemukan penggunaannya, sambil mempertahankan nilai konfigurasi aktif.
 - Melengkapi dan mengelompokkan variabel yang digunakan aplikasi dalam `.env.example` agar konfigurasi deployment dan integrasi lebih mudah ditemukan tanpa menyalin nilai rahasia.
