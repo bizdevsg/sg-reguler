@@ -1,0 +1,92 @@
+import type { Metadata, Viewport } from "next";
+import "aos/dist/aos.css";
+import "flag-icons/css/flag-icons.min.css";
+import { FirebaseBootstrap } from "@/components/providers/FirebaseBootstrap";
+import { LoadingProvider } from "@/components/providers/LoadingProvider";
+import { NEWS_IMAGE_BASE_URL } from "@/lib/env";
+import {
+  DEFAULT_SITE_DESCRIPTION,
+  DEFAULT_SITE_TITLE,
+  SITE_METADATA_BASE,
+} from "@/lib/metadata";
+import {
+  DEFAULT_LOCALE,
+  getLocaleConfig,
+  isSupportedLocale,
+  type AppLocale,
+} from "@/locales";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  metadataBase: SITE_METADATA_BASE,
+  title: {
+    default: DEFAULT_SITE_TITLE,
+    template: "%s - Solid Gold Berjangka",
+  },
+  description: DEFAULT_SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Solid Gold Berjangka",
+    title: DEFAULT_SITE_TITLE,
+    description: DEFAULT_SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/assets/BANNER-UTAMA-SOLID.png",
+        alt: "Solid Gold Berjangka",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_SITE_TITLE,
+    description: DEFAULT_SITE_DESCRIPTION,
+    images: ["/assets/BANNER-UTAMA-SOLID.png"],
+  },
+  icons: {
+    icon: "/assets/Logo SG-WEB111.png",
+    shortcut: "/assets/Logo SG-WEB111.png",
+    apple: "/assets/Logo SG-WEB111.png",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  interactiveWidget: "resizes-visual",
+};
+
+export default async function RootLayout({
+  children,
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params?: Promise<{ locales?: string }>;
+}>) {
+  const { locales } = params ? await params : {};
+  const locale: AppLocale =
+    locales && isSupportedLocale(locales) ? locales : DEFAULT_LOCALE;
+
+  return (
+    <html
+      lang={getLocaleConfig(locale).lang}
+      data-locale={locale}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+      className="h-full antialiased"
+    >
+      <head>
+        <link rel="dns-prefetch" href="//portalnews.newsmaker.id" />
+        <link
+          rel="preconnect"
+          href={NEWS_IMAGE_BASE_URL}
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
+        <FirebaseBootstrap />
+        <LoadingProvider locale={locale}>{children}</LoadingProvider>
+      </body>
+    </html>
+  );
+}
