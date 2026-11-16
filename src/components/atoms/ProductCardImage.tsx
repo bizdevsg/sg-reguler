@@ -4,6 +4,7 @@ export function ProductCardImage({ src }: { src: string }) {
   return (
     <Image
       src={src}
+      unoptimized={src.startsWith("/api/image-proxy/")}
       alt=""
       width={1080}
       height={1080}

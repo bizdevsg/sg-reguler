@@ -77,6 +77,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <div className="relative order-1 md:order-2 flex min-h-64 items-center justify-center bg-[radial-gradient(ellipse_at_center,rgba(202,149,34,0.14),transparent_70%)] py-0 sm:py-6 md:min-h-[380px]">
                 <Image
                   src={product.image}
+                  unoptimized={product.image.startsWith("/api/image-proxy/")}
                   alt=""
                   width={600}
                   height={600}

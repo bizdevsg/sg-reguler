@@ -14,7 +14,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
 
   const HERO_FLOATING_CARDS = [
     {
-      src: "/assets/floating-image/Gambar ChatGPT 16 Okt 2026, 10.38.33-1 2.webp",
+      src: "/assets/floating-image/hero-1.webp",
       width: 680,
       height: 476,
       mobileClassName: "left-[7%] top-[10%] w-[20%]",
@@ -22,7 +22,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
       animationClass: "animate-[hero-float_6.5s_ease-in-out_infinite]",
     },
     {
-      src: "/assets/floating-image/Gambar ChatGPT 16 Okt 2026, 10.38.34-2 2.webp",
+      src: "/assets/floating-image/hero-2.webp",
       width: 700,
       height: 532,
       mobileClassName: "right-[10%] top-[28%] w-[20%]",
@@ -30,7 +30,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
       animationClass: "animate-[hero-float-alt_7.2s_ease-in-out_infinite]",
     },
     {
-      src: "/assets/floating-image/Gambar ChatGPT 16 Okt 2026, 10.38.35-3 2.webp",
+      src: "/assets/floating-image/hero-3.webp",
       width: 660,
       height: 484,
       mobileClassName: "left-[5%] top-[52%] w-[20%]",
@@ -38,7 +38,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
       animationClass: "animate-[hero-float_7.6s_ease-in-out_infinite]",
     },
     {
-      src: "/assets/floating-image/Gambar ChatGPT 16 Okt 2026, 10.38.36-4 2.webp",
+      src: "/assets/floating-image/hero-4.webp",
       width: 700,
       height: 488,
       mobileClassName: "right-[10%] top-[72%] w-[20%]",

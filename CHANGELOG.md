@@ -14,6 +14,8 @@
 - Menambahkan konfigurasi opsional `WAKIL_PIALANG_API_BASE_URL` untuk sumber data resmi Wakil Pialang dan kantor cabang.
 
 ### Changed
+- Merapikan `.env` lokal dengan menghapus konfigurasi fitur yang tidak digunakan dan Client Area yang dinonaktifkan di proyek ini.
+- Menghapus empat variabel dari `.env` lokal yang hasil konfigurasinya tidak digunakan oleh fitur proyek.
 - Mengabaikan folder `/deploy` di Git agar berkas deployment lokal tidak ikut tercatat dalam repository.
 - Menyesuaikan konfigurasi `.env` lokal untuk domain reguler, mode produksi, origin SG Admin, dan endpoint produksi yang diperlukan.
 - Merapikan `.env` lokal sesuai variabel yang direferensikan proyek dan menghapus konfigurasi lama yang tidak ditemukan penggunaannya, sambil mempertahankan nilai konfigurasi aktif.
@@ -51,6 +53,9 @@
 - Merapikan `.env` dengan menghapus 13 variabel warisan aplikasi/deployment lain yang tidak memiliki referensi di source maupun konfigurasi project, tanpa mengubah variabel aktif.
 
 ### Fixed
+- Mengganti nama empat aset hero menjadi nama sederhana agar pemuatan gambar konsisten pada deployment.
+- Memuat gambar detail produk melalui image proxy tanpa optimasi Next.js agar tidak tertolak oleh proteksi API.
+- Memuat gambar kartu produk langsung melalui image proxy agar tidak ditolak saat Next.js mengoptimalkan gambar tanpa header permintaan browser.
 - Memperbaiki struktur tabel spesifikasi produk yang memiliki beberapa tabel serta sel gabungan agar kolom dan baris tetap sejajar.
 - Memperbaiki tabel spesifikasi dua kolom di mobile agar mengikuti lebar layar dan teks tidak terpotong; tabel dengan lebih banyak kolom tetap dapat digeser.
 - Memperbaiki sumber produk halaman utama agar menggunakan endpoint JFX dan SPA, termasuk nama, deskripsi sesuai locale, dan URL gambar dari respons API; gangguan satu kategori tidak menyembunyikan kategori lainnya.
