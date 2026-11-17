@@ -52,11 +52,11 @@ export function NewsFeedArticleCard({
 
           <div className="flex min-w-0 flex-1 flex-col">
             <div className="flex min-h-9 flex-wrap items-start gap-2">
-              <span className="line-clamp-1 inline-flex min-w-0 max-w-full rounded-full bg-yellow-500/5 border border-yellow-500/20 px-2.5 py-1 text-[0.6875rem] font-medium text-yellow-400 sm:max-w-[150px]">
+              <span className="line-clamp-1 inline-flex min-w-0 max-w-full rounded-full bg-yellow-500/5 border border-yellow-500/20 px-2.5 py-1 text-[11px] font-medium text-yellow-400 sm:max-w-[150px]">
                 {article.displayCategory}
               </span>
 
-              <span className="pt-1 text-[0.6875rem] text-zinc-500 text-shadow-black sm:ml-auto sm:shrink-0 sm:whitespace-nowrap">
+              <span className="pt-1 text-[11px] text-zinc-500 text-shadow-black sm:ml-auto sm:shrink-0 sm:whitespace-nowrap">
                 {formatLocaleDateTime(article.publishedAt, locale)}
               </span>
             </div>
@@ -112,11 +112,11 @@ export function NewsFeedArticleCard({
 
             <div className="relative flex h-full min-w-0 flex-1 flex-col justify-between p-5 sm:p-8">
               <div className="flex min-h-9 w-full flex-wrap items-start gap-2">
-                <span className="inline-flex min-w-0 max-w-full rounded-full border border-yellow-500/50 bg-yellow-500/12 px-3 py-1 text-[0.6875rem] font-medium text-yellow-300">
+                <span className="inline-flex min-w-0 max-w-full rounded-full border border-yellow-500/50 bg-yellow-500/12 px-3 py-1 text-[11px] font-medium text-yellow-300">
                   {article.displayCategory}
                 </span>
 
-                <span className="pt-1 text-[0.6875rem] text-zinc-300 sm:ml-auto sm:whitespace-nowrap">
+                <span className="pt-1 text-[11px] text-zinc-300 sm:ml-auto sm:whitespace-nowrap">
                   {formatLocaleDateTime(article.publishedAt, locale)}
                 </span>
               </div>
@@ -126,7 +126,7 @@ export function NewsFeedArticleCard({
                   {article.title}
                 </h2>
 
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-200/82 sm:text-[0.9375rem]">
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-200/82 sm:text-[15px]">
                   {article.summary}
                 </p>
 
@@ -157,11 +157,11 @@ export function NewsFeedArticleCard({
 
             <div className="flex min-w-0 flex-1 flex-col p-5">
               <div className="flex min-h-9 flex-wrap items-start gap-2">
-                <span className="line-clamp-1 inline-flex min-w-0 max-w-full rounded-full border border-yellow-500/15 bg-yellow-500/10 px-2.5 py-1 text-[0.6875rem] font-medium text-yellow-400 sm:max-w-[180px]">
+                <span className="line-clamp-1 inline-flex min-w-0 max-w-full rounded-full border border-yellow-500/15 bg-yellow-500/10 px-2.5 py-1 text-[11px] font-medium text-yellow-400 sm:max-w-[180px]">
                   {article.displayCategory}
                 </span>
 
-                <span className="pt-1 text-[0.6875rem] text-zinc-500 sm:ml-auto sm:shrink-0 sm:whitespace-nowrap">
+                <span className="pt-1 text-[11px] text-zinc-500 sm:ml-auto sm:shrink-0 sm:whitespace-nowrap">
                   {formatLocaleDateTime(article.publishedAt, locale)}
                 </span>
               </div>

@@ -54,7 +54,7 @@ export function LiveQuoteCompactCard({
 
       <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
         <div className="rounded-lg border border-white/10 bg-black/10 px-4 py-3">
-          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-white/55">
+          <p className="text-[11px] uppercase tracking-[0.14em] text-white/55">
             {fieldLabels.buy}
           </p>
           <p className="mt-2 font-mono text-white/78">
@@ -62,7 +62,7 @@ export function LiveQuoteCompactCard({
           </p>
         </div>
         <div className="rounded-lg border border-white/10 bg-black/10 px-4 py-3">
-          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-white/55">
+          <p className="text-[11px] uppercase tracking-[0.14em] text-white/55">
             {fieldLabels.sell}
           </p>
           <p className="mt-2 font-mono text-white/78">
