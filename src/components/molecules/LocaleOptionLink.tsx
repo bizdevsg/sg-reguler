@@ -52,7 +52,7 @@ export function LocaleOptionLink({
       </div>
 
       {isActive ? (
-        <span className="rounded-full border border-yellow-500/25 bg-yellow-500/12 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-yellow-300">
+        <span className="rounded-full border border-yellow-500/25 bg-yellow-500/12 px-2 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-yellow-300">
           {activeLabel}
         </span>
       ) : null}

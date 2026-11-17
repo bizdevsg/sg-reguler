@@ -49,7 +49,7 @@ export function LiveQuoteFullCard({
 
         <div className="flex items-center gap-3">
           <div className="text-right">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-foreground/55">
+            <p className="text-[0.6875rem] uppercase tracking-[0.18em] text-foreground/55">
               {fieldLabels.price}
             </p>
             <p
@@ -68,7 +68,7 @@ export function LiveQuoteFullCard({
 
       <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
         <div className="rounded-lg border border-line bg-black/20 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.14em] text-foreground/55">
+          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-foreground/55">
             {fieldLabels.sell}
           </p>
           <p className="mt-1 font-mono text-foreground/78">
@@ -76,7 +76,7 @@ export function LiveQuoteFullCard({
           </p>
         </div>
         <div className="rounded-lg border border-line bg-black/20 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.14em] text-foreground/55">
+          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-foreground/55">
             {fieldLabels.buy}
           </p>
           <p className="mt-1 font-mono text-foreground/78">
@@ -84,7 +84,7 @@ export function LiveQuoteFullCard({
           </p>
         </div>
         <div className="rounded-lg border border-line bg-black/20 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.14em] text-foreground/55">
+          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-foreground/55">
             {fieldLabels.open}
           </p>
           <p className="mt-1 font-mono text-foreground/78">
@@ -92,7 +92,7 @@ export function LiveQuoteFullCard({
           </p>
         </div>
         <div className="rounded-lg border border-line bg-black/20 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.14em] text-foreground/55">
+          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-foreground/55">
             {fieldLabels.high}
           </p>
           <p className="mt-1 font-mono text-foreground/78">
@@ -100,7 +100,7 @@ export function LiveQuoteFullCard({
           </p>
         </div>
         <div className="rounded-lg border border-line bg-black/20 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.14em] text-foreground/55">
+          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-foreground/55">
             {fieldLabels.low}
           </p>
           <p className="mt-1 font-mono text-foreground/78">
@@ -108,7 +108,7 @@ export function LiveQuoteFullCard({
           </p>
         </div>
         <div className="rounded-lg border border-line bg-black/20 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.14em] text-foreground/55">
+          <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-foreground/55">
             {fieldLabels.time}
           </p>
           <p className="mt-1 text-foreground/72">

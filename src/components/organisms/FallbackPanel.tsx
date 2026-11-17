@@ -36,7 +36,7 @@ export function FallbackPanel({
           />
         </div>
 
-        <div className="mx-auto inline-flex max-w-full rounded-full border border-[rgba(255,214,120,0.24)] bg-[rgba(214,166,64,0.1)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f1cb74] sm:px-4 sm:text-[11px] sm:tracking-[0.28em]">
+        <div className="mx-auto inline-flex max-w-full rounded-full border border-[rgba(255,214,120,0.24)] bg-[rgba(214,166,64,0.1)] px-3 py-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-[#f1cb74] sm:px-4 sm:text-[0.6875rem] sm:tracking-[0.28em]">
           {badge}
         </div>
 

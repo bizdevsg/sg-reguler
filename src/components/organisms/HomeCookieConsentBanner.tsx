@@ -206,7 +206,7 @@ export function HomeCookieConsentBanner({
 
                         <div className="min-w-0 flex-1">
                           <p className="text-sm font-medium">{option.alt}</p>
-                          <p className="mt-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+                          <p className="mt-0.5 text-[0.6875rem] uppercase tracking-[0.18em] text-zinc-500">
                             {option.value}
                           </p>
                         </div>
@@ -236,7 +236,7 @@ export function HomeCookieConsentBanner({
                       {copy.title}
                     </h2>
 
-                    <p className="mt-3 text-sm leading-6 text-zinc-300 sm:text-[15px] sm:leading-7">
+                    <p className="mt-3 text-sm leading-6 text-zinc-300 sm:text-[0.9375rem] sm:leading-7">
                       {copy.description}
                     </p>
 
