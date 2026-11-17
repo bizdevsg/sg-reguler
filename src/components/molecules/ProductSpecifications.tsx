@@ -72,6 +72,38 @@ function parseTables(html: string) {
   }).filter((table) => table.rows.length > 0);
 }
 
+type Segment =
+  | { type: "table"; table: ReturnType<typeof parseTables>[number] }
+  | { type: "text"; lines: string[] };
+
+function textLines(html: string): string[] {
+  return html
+    .replace(/<li\b[^>]*>/gi, "\n• ")
+    .replace(/<\/(p|div|li|ul|ol|h[1-6]|blockquote|section|article)\s*>/gi, "\n")
+    .replace(/<br\s*\/?\s*>/gi, "\n")
+    .replace(/<(p|div|h[1-6]|ul|ol|blockquote|section|article)\b[^>]*>/gi, "\n")
+    .split("\n")
+    .map(decodeText)
+    .filter(Boolean);
+}
+
+function parseSegments(html: string): Segment[] {
+  const segments: Segment[] = [];
+  const pushText = (chunk: string) => {
+    const lines = textLines(chunk);
+    if (lines.length) segments.push({ type: "text", lines });
+  };
+  let last = 0;
+  for (const match of html.matchAll(/<table\b[^>]*>[\s\S]*?<\/table\s*>/gi)) {
+    pushText(html.slice(last, match.index));
+    const [table] = parseTables(match[0]);
+    if (table) segments.push({ type: "table", table });
+    last = match.index + match[0].length;
+  }
+  pushText(html.slice(last));
+  return segments;
+}
+
 export function ProductSpecifications({
   html,
   title,
@@ -81,10 +113,9 @@ export function ProductSpecifications({
   title: string;
   scrollHint: string;
 }) {
-  const tables = parseTables(html);
-  const needsScroll = tables.some((table) => table.columnCount > 2);
-  const text = tables.length ? "" : decodeText(html);
-  if (!tables.length && !text) return null;
+  const segments = parseSegments(html);
+  if (!segments.length) return null;
+  const needsScroll = segments.some((s) => s.type === "table" && s.table.columnCount > 2);
 
   return (
     <section className="mt-14 sm:mt-20">
@@ -94,14 +125,21 @@ export function ProductSpecifications({
         </h2>
         <div aria-hidden="true" className="h-px flex-1 bg-white/10" />
       </div>
-      {tables.length ? (
-        <div className="mt-6">
-          {needsScroll && <p id="product-specifications-scroll-hint" className="mb-3 text-xs leading-5 text-zinc-400 sm:hidden">
-            {scrollHint}
-          </p>}
-          <div role="region" aria-label={title} aria-describedby={needsScroll ? "product-specifications-scroll-hint" : undefined} tabIndex={0} className="overflow-x-auto rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400">
-          {tables.map((table, tableIndex) => (
-          <table key={tableIndex} className={`w-full table-fixed border-collapse text-left text-sm leading-6 text-zinc-200 ${tableIndex ? "mt-6" : ""} ${table.columnCount > 2 ? "min-w-[28rem] sm:min-w-[36rem]" : ""}`}>
+      <div className="mt-6">
+        {needsScroll && <p id="product-specifications-scroll-hint" className="mb-3 text-xs leading-5 text-zinc-400 sm:hidden">
+          {scrollHint}
+        </p>}
+        {segments.map((segment, segmentIndex) =>
+          segment.type === "text" ? (
+            <div key={segmentIndex} className={`space-y-2 leading-7 text-zinc-300 ${segmentIndex ? "mt-6" : ""}`}>
+              {segment.lines.map((line, lineIndex) => (
+                <p key={lineIndex}>{line}</p>
+              ))}
+            </div>
+          ) : (
+          <div key={segmentIndex} role="region" aria-label={title} aria-describedby={segment.table.columnCount > 2 ? "product-specifications-scroll-hint" : undefined} tabIndex={0} className={`overflow-x-auto rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 ${segmentIndex ? "mt-6" : ""}`}>
+          {[segment.table].map((table, tableIndex) => (
+          <table key={tableIndex} className={`w-full table-fixed border-collapse text-left text-sm leading-6 text-zinc-200 ${table.columnCount > 2 ? "min-w-[28rem] sm:min-w-[36rem]" : ""}`}>
             {table.columnCount === 2 && <colgroup><col className="w-[40%]" /><col className="w-[60%]" /></colgroup>}
             <tbody>
               {table.rows.map((row, rowIndex) => (
@@ -122,12 +160,9 @@ export function ProductSpecifications({
           </table>
           ))}
           </div>
-        </div>
-      ) : (
-        <p className="mt-5 whitespace-pre-line leading-7 text-zinc-300">
-          {text}
-        </p>
-      )}
+          ),
+        )}
+      </div>
     </section>
   );
 }
