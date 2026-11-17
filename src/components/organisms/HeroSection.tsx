@@ -63,7 +63,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
             effect="fade-left"
             delay={120}
           >
-            <div className="pointer-events-none absolute inset-0 translate-x-0.5 sm:translate-x-1">
+            <div className="pointer-events-none absolute inset-0 translate-x-[3%]">
               <img
                 src="/assets/Banner-solid.webp"
                 alt={messages.hero.visualAlt}
