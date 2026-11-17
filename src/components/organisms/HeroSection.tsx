@@ -63,9 +63,9 @@ export function HeroSection({ locale }: HeroSectionProps) {
             effect="fade-left"
             delay={120}
           >
-            <div className="pointer-events-none absolute inset-0 translate-x-4 sm:translate-x-6">
+            <div className="pointer-events-none absolute inset-0 translate-x-0.5 sm:translate-x-1">
               <img
-                src="/assets/Banner Paten Web Solid New-Figma-5-1.webp"
+                src="/assets/Banner-solid.webp"
                 alt={messages.hero.visualAlt}
                 className="h-full w-full object-contain [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
               />
@@ -142,7 +142,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
             delay={160}
           >
             <img
-              src="/assets/Banner Paten Web Solid New-Figma-5-1.webp"
+              src="/assets/Banner-solid.webp"
               alt=""
               className="w-[600px] max-w-none object-contain xl:w-[760px]"
             />
