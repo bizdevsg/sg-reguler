@@ -14,6 +14,7 @@
 - Menambahkan konfigurasi opsional `WAKIL_PIALANG_API_BASE_URL` untuk sumber data resmi Wakil Pialang dan kantor cabang.
 
 ### Changed
+- Memperpendek cache data produk dari 5 menit menjadi 30 detik pada beranda, katalog, dan detail agar perubahan dari SG Admin lebih cepat terlihat.
 - Menyesuaikan tampilan kartu produk beranda dengan batas lebih netral dan teks yang lebih terbaca di atas gambar.
 - Memperbarui informasi saldo virtual akun demo di hero dari $5.000 menjadi $10.000 dalam bahasa Indonesia dan Inggris.
 - Merapikan `.env` lokal dengan menghapus konfigurasi fitur yang tidak digunakan dan Client Area yang dinonaktifkan di proyek ini.

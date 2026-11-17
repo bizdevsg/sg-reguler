@@ -6,6 +6,8 @@ import { getSgAdminApiHeaders } from "@/lib/sg-admin-api";
 import type { AppLocale } from "@/locales";
 import type { HomeProduct, ProductCategory, ProductDetail } from "@/types/product";
 
+const PRODUCT_REVALIDATE_SECONDS = 30;
+
 type ApiProduct = {
   id: number;
   slug: string;
@@ -35,7 +37,7 @@ export async function getCategoryProducts(category: ProductCategory, locale: App
   try {
     const response = await fetch(`${PRODUCT_API_URL.replace(/\/+$/, "")}/${category}`, {
       headers: await getSgAdminApiHeaders(),
-      next: { revalidate: 300 },
+      next: { revalidate: PRODUCT_REVALIDATE_SECONDS },
       signal: AbortSignal.timeout(8_000),
     });
     if (!response.ok) return null;
@@ -51,7 +53,7 @@ export async function getCategoryProducts(category: ProductCategory, locale: App
         url.searchParams.set("page", String(index + 2));
         const page = await fetch(url, {
           headers: await getSgAdminApiHeaders(),
-          next: { revalidate: 300 },
+          next: { revalidate: PRODUCT_REVALIDATE_SECONDS },
           signal: AbortSignal.timeout(8_000),
         });
         if (!page.ok) throw new Error("Product page unavailable");
@@ -85,7 +87,7 @@ export const getProductDetail = cache(async (category: ProductCategory, slug: st
   try {
     const response = await fetch(`${PRODUCT_API_URL.replace(/\/+$/, "")}/${category}/${encodeURIComponent(slug)}`, {
       headers: await getSgAdminApiHeaders(),
-      next: { revalidate: 300 },
+      next: { revalidate: PRODUCT_REVALIDATE_SECONDS },
       signal: AbortSignal.timeout(8_000),
     });
     if (response.status === 404) {
