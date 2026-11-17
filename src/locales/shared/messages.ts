@@ -62,7 +62,9 @@ export type AppMessages = {
   };
   appPromoSection: {
     title: string;
+    titleHighlight: string;
     description: string;
+    descriptionHighlight: string;
     benefits: string[];
     imageAlt: string;
     googlePlayAlt: string;

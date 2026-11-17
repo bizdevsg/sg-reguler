@@ -1,9 +1,11 @@
 import type { AppMessages } from "../../shared/messages";
 
 export const idAppPromoSection: AppMessages["appPromoSection"] = {
-  title: "Trading Lebih Profesional di Satu Aplikasi",
+  title: "Trading Lebih Profesional",
+  titleHighlight: "di Satu Aplikasi",
   description:
-    "Akses market, pantau harga, baca update terbaru, dan kelola akun trading dengan lebih praktis melalui aplikasi ProTrader.",
+    "Akses market, pantau harga, baca update terbaru, dan kelola akun trading dengan lebih praktis melalui aplikasi",
+  descriptionHighlight: "ProTrader.",
   benefits: [
     "Trading komoditas kapan saja dan di mana saja",
     "Pantau pergerakan harga dan informasi market secara real time",
