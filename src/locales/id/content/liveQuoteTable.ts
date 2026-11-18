@@ -1,6 +1,8 @@
 import type { AppMessages } from "../../shared/messages";
 
 export const idLiveQuoteTable: AppMessages["liveQuoteTable"] = {
+  previousLabel: "Quote sebelumnya",
+  nextLabel: "Quote berikutnya",
   feedLabel: "Realtime Market Feed",
   empty: "Menunggu data live quote masuk dari websocket.",
   firstTick: "Menunggu tick pertama",

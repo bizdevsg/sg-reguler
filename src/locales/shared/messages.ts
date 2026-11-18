@@ -174,6 +174,8 @@ export type AppMessages = {
     benefits: string[];
   };
   liveQuoteTable: {
+    previousLabel: string;
+    nextLabel: string;
     feedLabel: string;
     empty: string;
     firstTick: string;

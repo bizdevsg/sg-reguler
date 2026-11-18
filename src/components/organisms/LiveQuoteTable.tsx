@@ -25,6 +25,11 @@ export function LiveQuoteTable({
   const messages = getMessages(locale);
   const fieldLabels = messages.liveQuoteTable.fields;
   const connectionStatusMessages = messages.liveQuoteTable.connectionStatus;
+  const sliderLabels = {
+    region: messages.liveQuoteTable.feedLabel,
+    previous: messages.liveQuoteTable.previousLabel,
+    next: messages.liveQuoteTable.nextLabel,
+  };
   const { quotes, status, lastUpdated } = useLiveQuoteStream();
   const [initialLoadTimedOut, setInitialLoadTimedOut] = useState(false);
 
@@ -106,6 +111,7 @@ export function LiveQuoteTable({
               quotes={quotes}
               symbols={symbols}
               fieldLabels={fieldLabels}
+              sliderLabels={sliderLabels}
             />
             <LiveQuoteDataTable
               locale={locale}
@@ -121,6 +127,7 @@ export function LiveQuoteTable({
             quotes={quotes}
             symbols={compactSymbols}
             fieldLabels={fieldLabels}
+            sliderLabels={sliderLabels}
           />
         )}
       </div>
