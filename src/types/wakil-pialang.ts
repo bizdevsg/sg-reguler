@@ -16,6 +16,7 @@ export type Representative = {
   status: string;
   status_label?: string;
   category?: RepresentativeCategory | null;
+  created_at?: string | null;
 };
 
 export type WakilPialangPageData = {

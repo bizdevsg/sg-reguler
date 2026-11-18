@@ -62,6 +62,30 @@ export async function getWakilPialangPageData(
     representatives:
       categories === null
         ? null
-        : await fetchApiData<Representative[]>(representativePath),
+        : sortLikeBackOffice(
+            await fetchApiData<Representative[]>(representativePath),
+          ),
   };
+}
+
+function createdAtTime(representative: Representative) {
+  const time = Date.parse(representative.created_at ?? "");
+  return Number.isNaN(time) ? -Infinity : time;
+}
+
+// Same order as the SG Admin back office: newest created_at first. Records are
+// often imported in batches that share a timestamp, so ties fall back to the
+// id (ascending) to keep the order stable.
+function sortLikeBackOffice(
+  representatives: Representative[] | null,
+): Representative[] | null {
+  if (!representatives) return null;
+  return [...representatives].sort((a, b) => {
+    const timeA = createdAtTime(a);
+    const timeB = createdAtTime(b);
+    if (timeA !== timeB) return timeB > timeA ? 1 : -1;
+    return String(a.id).localeCompare(String(b.id), undefined, {
+      numeric: true,
+    });
+  });
 }
