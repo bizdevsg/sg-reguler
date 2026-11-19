@@ -10,11 +10,11 @@ type HomeWhyChooseSectionProps = {
 };
 
 const ICON_MAP: Record<HomeWhyChooseItemId, string> = {
-  legal: "/assets/justice_1781185.png",
-  experience: "/assets/experience_9295588.png",
-  support: "/assets/online-chat_2600350.png",
-  security: "/assets/justice_1781185.png",
-  transparency: "/assets/ebook_6795784.png",
+  legal: "/assets/37.png",
+  experience: "/assets/38.png",
+  support: "/assets/35.png",
+  security: "/assets/36.png",
+  transparency: "/assets/39.png",
 };
 
 export function HomeWhyChooseSection({ locale }: HomeWhyChooseSectionProps) {
