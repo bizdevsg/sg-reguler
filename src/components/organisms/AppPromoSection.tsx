@@ -28,8 +28,8 @@ export function AppPromoSection({ locale }: AppPromoSectionProps) {
         >
           <div className="absolute inset-0 bg-black/20" />
 
-          <div className="relative z-10 flex min-h-[22rem] flex-col items-center gap-6 px-5 py-8 text-center sm:px-8 md:min-h-[24rem] md:flex-row md:items-center md:justify-between md:gap-4 md:px-10 md:py-0 md:text-left lg:px-16">
-            <div className="order-2 max-w-xl md:order-1 md:flex-1">
+          <div className="relative z-10 flex min-h-[22rem] flex-col items-center gap-6 px-5 py-8 text-center sm:px-8 md:min-h-[28rem] md:flex-row md:items-center md:justify-between md:gap-4 md:px-10 md:py-8 md:text-left lg:px-16">
+            <div className="order-2 max-w-xl md:order-1 md:w-1/2">
               <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-[2.6rem]">
                 {messages.title}
                 <span className="block text-yellow-400">
@@ -69,14 +69,14 @@ export function AppPromoSection({ locale }: AppPromoSectionProps) {
               </div>
             </div>
 
-            <div className="order-1 relative w-full max-w-[17rem] shrink-0 sm:max-w-[19rem] md:order-2 md:max-w-[22rem] lg:max-w-[26rem]">
+            <div className="order-1 relative flex w-full shrink-0 justify-center md:order-2 md:justify-end md:w-1/2">
               <Image
-                src="/assets/hp-protrader.webp"
+                src="/assets/ezgif.com-webp-maker.webp"
                 width={1080}
                 height={1080}
                 alt={messages.imageAlt}
                 sizes="(max-width: 640px) 272px, (max-width: 1024px) 352px, 416px"
-                className="mx-auto h-auto max-h-[18rem] w-full object-contain sm:max-h-[20rem] md:max-h-[26rem] lg:max-h-[28rem]"
+                className="mx-auto h-auto max-h-[18rem] w-full md:translate-x-[12%] md:translate-y-[5%] max-w-[17rem] object-contain sm:max-w-[19rem] md:max-w-[26rem] lg:max-w-[32rem] sm:max-h-[20rem] md:max-h-[26rem] lg:max-h-[30rem]"
               />
             </div>
           </div>
